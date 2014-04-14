@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="sixteen columns">
+    <form ng-controller="ChatCtrl" class="chat-box" action="javascript:void(0)">
+      <ul id="chat-box">
+        <li ng-repeat="m in messages" class="message-box" ng-class="{0: 'van'}[m.author_id]">
+          <div class="message-text">
+            <img src="http://placehold.it/32x32">
+            <strong>[[m.author_name]]</strong>: [[m.answer]] <i class="vote-yes"></i> <i class="vote-no"></i>
+          </div>
+        </li>
+      </ul>
+      
+      <input type="text" class="form-element" ng-model="message" id="message-box">
+      <button class="btn btn-default" ng-click="sendMessage(message)">Enviar</button>
+    </form>
+  </div>
+</div>
