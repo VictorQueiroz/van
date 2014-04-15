@@ -12,16 +12,9 @@
 
     <title>Van - I am your friend.</title>
 
-    <script type="text/javascript" src="js/vendor/angular.min.js"></script>
-    <script type="text/javascript" src="js/vendor/angular-route.min.js"></script>
-    <script type="text/javascript" src="js/app.js"></script>
-    <script type="text/javascript" src="js/controllers.js"></script>
-    <script type="text/javascript" src="js/directives.js"></script>
+    <script type="text/javascript" src="/js/base.min.js"></script>
 
-    <script type="text/javascript" src="js/vendor/mousetrap.min.js"></script>
-    <script type="text/javascript" src="js/vendor/cookie.js"></script>
-
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
 
     <style type="text/css">
       .fa {
@@ -41,14 +34,21 @@
     @section('topbar')
     <div class="container">
       <div class="sixteen columns">
+        <div class="van-logo">
+          Van
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="sixteen columns">
         <nav class="topbar">
-          <button class="topbar-collapse" ng-click="">
+          <button class="topbar-collapse">
             <i class="collapse-icon"></i>
           </button>
 
           <ul class="topbar-left">
             <li><a href="#home"><i class="fa fa-home fa-lg"></i> Início</a></li>
-            <li><a href="#"><i class="fa fa-github fa-lg"></i> Github</a></li>
+            <li><a href="https://github.com/victorqueiroz/van"><i class="fa fa-github fa-lg"></i> Github</a></li>
             <li><a href="#"><i class="fa fa-facebook fa-lg"></i> Facebook</a></li>
             <li><a href="#"><i class="fa fa-bookmark fa-lg"></i> Sobre</a></li>
           </ul>
@@ -56,6 +56,9 @@
           <ul class="topbar-right">
           @if(Auth::check())
             <li><a href="#profile">{{Auth::getUser()->login_name}}</a></li>
+          @if(Permission::find(Auth::getUser()->id)->permission == 2)
+            <li><a href="#adm/index">Administração</a></li>
+          @endif
           @else
             <li><a href="#login"><i class="fa fa-key fa-lg"></i> Conectar-se</a></li>
             <li><a href="#register"><i class="fa fa-pencil fa-lg"></i> Registrar-se</a></li>
@@ -75,9 +78,9 @@
     @section('footer')
       <div class="container">
         <div class="sixteen columns">
-          <div style="color: white; text-align: right; padding: 10px; background-color: #1BBC9B">
+          <footer class="footer">
             Desenvolvido por Victor Queiroz 
-          </div>
+          </footer>
         </div>
       </div>
     @show

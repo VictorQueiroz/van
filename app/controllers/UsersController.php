@@ -33,10 +33,11 @@ class UsersController extends \BaseController {
 
   public function auth ()
   {
-    if(Auth::attempt(Input::all()))
+    if(Auth::attempt(Input::all())) {
       return Redirect::to('/');
-    else
+    } else {
       return Redirect::guest();
+    }
   }
 
 }

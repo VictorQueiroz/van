@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="sixteen columns">
+    <table class="table">
+      <tr class="head">
+        <td>id</td>
+        <td>keywords</td>
+        <td>answer</td>
+        <td></td>
+      </tr>
+
+      <tr ng:repeat="answer in answers">
+        <td>[[answer.id]]</td>
+        <td>[[answer.keywords]]</td>
+        <td>[[answer.answer]]</td>
+        <td><i class="answer-edit-icon"></i></td>
+      </tr>
+    </table>
+  </div>
+</div>

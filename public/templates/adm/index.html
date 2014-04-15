@@ -1,0 +1,15 @@
+<div class="container" ng-if="user.permission == 2">
+  <div class="sexteen columns">
+    <div>
+      <ul>
+        <li><a href="#adm/answers">Respostas</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="container" ng-if="user.permission < 2">
+  <div class="sexteen columns">
+    Você não tem direito de estar acessando a esta área.
+  </div>
+</div>

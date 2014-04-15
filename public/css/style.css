@@ -1,3 +1,7 @@
+* {
+  margin: 0;
+  padding: 0; }
+
 /*!
  *  Font Awesome 4.0.3 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -11,7 +15,7 @@
   font-weight: normal;
   font-style: normal; }
 
-.fa, .chat-box ul > li.message-box .vote-yes, .chat-box ul > li.message-box .vote-no, .close, .topbar .topbar-collapse .collapse-icon {
+.fa, .chat-box ul > li.message-box .vote-yes, .chat-box ul > li.message-box .vote-no, .close, .topbar .topbar-collapse .collapse-icon, .answer-edit-icon {
   display: inline-block;
   font-family: FontAwesome;
   font-style: normal;
@@ -21,7 +25,7 @@
   -moz-osx-font-smoothing: grayscale; }
 
 /* makes the font 33% larger relative to the icon container */
-.fa-lg, .chat-box ul > li.message-box .vote-yes, .chat-box ul > li.message-box .vote-no, .close, .topbar .topbar-collapse .collapse-icon {
+.fa-lg, .chat-box ul > li.message-box .vote-yes, .chat-box ul > li.message-box .vote-no, .close, .topbar .topbar-collapse .collapse-icon, .answer-edit-icon {
   font-size: 1.33333em;
   line-height: 0.75em;
   vertical-align: -15%; }
@@ -55,7 +59,7 @@
   width: 2.14286em;
   top: 0.14286em;
   text-align: center; }
-  .fa-li.fa-lg, .chat-box ul > li.message-box .fa-li.vote-yes, .chat-box ul > li.message-box .fa-li.vote-no, .fa-li.close, .topbar .topbar-collapse .fa-li.collapse-icon {
+  .fa-li.fa-lg, .chat-box ul > li.message-box .fa-li.vote-yes, .chat-box ul > li.message-box .fa-li.vote-no, .fa-li.close, .topbar .topbar-collapse .fa-li.collapse-icon, .fa-li.answer-edit-icon {
     left: -1.85714em; }
 
 .fa-border {
@@ -69,9 +73,9 @@
 .pull-left {
   float: left; }
 
-.fa.pull-left, .chat-box ul > li.message-box .pull-left.vote-yes, .chat-box ul > li.message-box .pull-left.vote-no, .pull-left.close, .topbar .topbar-collapse .pull-left.collapse-icon {
+.fa.pull-left, .chat-box ul > li.message-box .pull-left.vote-yes, .chat-box ul > li.message-box .pull-left.vote-no, .pull-left.close, .topbar .topbar-collapse .pull-left.collapse-icon, .pull-left.answer-edit-icon {
   margin-right: .3em; }
-.fa.pull-right, .chat-box ul > li.message-box .pull-right.vote-yes, .chat-box ul > li.message-box .pull-right.vote-no, .pull-right.close, .topbar .topbar-collapse .pull-right.collapse-icon {
+.fa.pull-right, .chat-box ul > li.message-box .pull-right.vote-yes, .chat-box ul > li.message-box .pull-right.vote-no, .pull-right.close, .topbar .topbar-collapse .pull-right.collapse-icon, .pull-right.answer-edit-icon {
   margin-left: .3em; }
 
 .fa-spin {
@@ -376,7 +380,8 @@
   content: "\f043"; }
 
 .fa-edit:before,
-.fa-pencil-square-o:before {
+.fa-pencil-square-o:before,
+.answer-edit-icon:before {
   content: "\f044"; }
 
 .fa-share-square-o:before {
@@ -2133,7 +2138,7 @@ or wrap each row of columns in a <div class="row"> */
         word-wrap: break-word;
         line-height: 32px;
         float: left; }
-        .chat-box ul > li.message-box .message-text > img {
+        .chat-box ul > li.message-box .message-text img {
           border: 1px solid rgba(0, 0, 0, 0.1);
           width: 32px;
           height: 32px;
@@ -2163,7 +2168,8 @@ or wrap each row of columns in a <div class="row"> */
   background-color: #2c3e50;
   margin: 0 auto;
   line-height: 40px;
-  position: relative; }
+  position: relative;
+  border: 1px solid #273646; }
   .topbar .topbar-collapse {
     display: none; }
   .topbar ul {
@@ -2189,7 +2195,7 @@ or wrap each row of columns in a <div class="row"> */
           background-color: white;
           box-shadow: 0px 0px 7px -3px #000 inset;
           color: #000; }
-          .topbar ul > li > a:hover .fa, .topbar ul > li > a:hover .chat-box ul > li.message-box .vote-yes, .chat-box ul > li.message-box .topbar ul > li > a:hover .vote-yes, .topbar ul > li > a:hover .chat-box ul > li.message-box .vote-no, .chat-box ul > li.message-box .topbar ul > li > a:hover .vote-no, .topbar ul > li > a:hover .close, .topbar ul > li > a:hover .topbar-collapse .collapse-icon, .topbar .topbar-collapse ul > li > a:hover .collapse-icon {
+          .topbar ul > li > a:hover .fa, .topbar ul > li > a:hover .chat-box ul > li.message-box .vote-yes, .chat-box ul > li.message-box .topbar ul > li > a:hover .vote-yes, .topbar ul > li > a:hover .chat-box ul > li.message-box .vote-no, .chat-box ul > li.message-box .topbar ul > li > a:hover .vote-no, .topbar ul > li > a:hover .close, .topbar ul > li > a:hover .topbar-collapse .collapse-icon, .topbar .topbar-collapse ul > li > a:hover .collapse-icon, .topbar ul > li > a:hover .answer-edit-icon {
             color: #CF000F; }
           .topbar ul > li > a:hover .fa-github {
             color: #000; }
@@ -2217,3 +2223,41 @@ or wrap each row of columns in a <div class="row"> */
   .topbar ul > li:first-child,
   .topbar ul > li:last-child {
     margin: 0; } }
+.van-logo {
+  background-color: #E74C3C;
+  box-shadow: inset 1px 1px 25px -16px #000;
+  margin-bottom: 5px;
+  font-size: 32px;
+  color: white;
+  font-family: Impact;
+  text-align: right;
+  padding: 5px;
+  border: 1px solid #e43725; }
+
+.table {
+  margin-top: 5px; }
+  .table tr.head > td {
+    font-weight: bold; }
+  .table tr {
+    color: white;
+    margin-bottom: 5px; }
+  .table tr > td {
+    word-wrap: break-word;
+    background-color: #67809f;
+    padding: 5px;
+    border-bottom: 3px solid #5f7897;
+    border-right: 1px solid #5f7897; }
+    .table tr > td:last-child {
+      border-bottom: none; }
+
+.answer-edit-icon:hover {
+  cursor: pointer;
+  color: #f2f2f2; }
+
+.footer {
+  margin-top: 5px;
+  color: white;
+  text-align: right;
+  padding: 10px;
+  background-color: #1BBC9B;
+  border: 1px solid #19af90; }

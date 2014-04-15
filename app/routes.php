@@ -21,7 +21,11 @@ Route::get('/conversations', function(){
 	return Response::json(Conversation::all()->toArray());
 });
 
-Route::group(['before' => 'guest'], function(){
+Route::group(array('before' => 'guest'), function(){
 	Route::post('/user/store', 'UsersController@store');
 	Route::post('/user/auth', 'UsersController@auth');
+});
+
+Route::group(array('before' => 'auth.adm'), function(){
+	Route::get('/check/permission', function(){ return Response::json(Permission::find(Auth::getUser()->id)->toArray()); });
 });

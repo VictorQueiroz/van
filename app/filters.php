@@ -44,6 +44,11 @@ Route::filter('auth.basic', function()
 	return Auth::basic();
 });
 
+Route::filter('auth.adm', function(){
+	if(!Auth::check() && Permission::find(Auth::getUser()->id)->permission < 2)
+		return Redirect::guest('login');
+});
+
 /*
 |--------------------------------------------------------------------------
 | Guest Filter

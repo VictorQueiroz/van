@@ -1,3 +1,25 @@
+/*
+  Controller name: UserCtrl
+*/
+app.controller('UserCtrl', ['$scope', '$http', '$location', function ($scope, $http, $location) {
+  $scope.user = {};
+
+  /* Verifica quais são as permissões do usuário atual. */
+  $http.get('/check/permission').success(function(data){
+    $scope.user.permission = data.permission;
+  });
+
+  $scope.$location = $location;
+
+  $http.get('/answers').success(function(data){
+    $scope.answers = [];
+    angular.copy(data, $scope.answers);
+  });  
+}]);
+
+/*
+  Controller name: UserRegisterCtrl
+*/
 app.controller('UserRegisterCtrl', ['$scope', '$http', function ($scope, $http) {
   $scope.success=false;
 
@@ -36,13 +58,14 @@ app.controller('ChatCtrl', ['$scope', '$http', '$interval', function ($scope, $h
     angular.copy(data, answers);
   });
 
+  var answers = answers;
+
   $scope.sendMessage = function (message) {
-    var $input = document.getElementById('message-box');
+    var $input =  document.getElementById('message-box');
     $input.value='';
     $input.select();
     
-    var $chat_box = document.getElementById('chat-box');
-    $chat_box.scrollTop = $chat_box.scrollHeight;
+    document.getElementById('chat-box').scrollTop=document.getElementById('chat-box').scrollHeight;
 
     if(message == null || message == '')
       return false;
@@ -259,5 +282,15 @@ app.controller('ChatCtrl', ['$scope', '$http', '$interval', function ($scope, $h
       high = getAnswerById(100);
 
     return high;
+  }
+}]);
+
+app.controller('CorrectAnswersCtrl', ['$scope', '$http', function($scope, $http){
+  $scope.voteYes = function (answerId) {
+      
+  }
+
+  $scope.voteNo = function (answerId) {
+    
   }
 }]);

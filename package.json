@@ -1,0 +1,10 @@
+{
+  "name": "Van",
+  "version": "0.1.0",
+  "author": "Victor Queiroz",
+  "private": true,
+  "devDependencies": {
+    "grunt": "~0.4.0",
+    "grunt-contrib-uglify": "^0.4.0"
+  }
+}
